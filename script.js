@@ -1,6 +1,3 @@
-// =========================================================================
-// 1. CURRENCY EXCHANGE RATES CONFIGURATION
-// =========================================================================
 const currencyRates = {
     "USD $": { symbol: "$", rate: 1.00, formatRight: false },
     "EUR €": { symbol: "€", rate: 0.92, formatRight: true }, 
@@ -8,9 +5,6 @@ const currencyRates = {
     "CAD $": { symbol: "CA$", rate: 1.37, formatRight: false }
 };
 
-// =========================================================================
-// 2. DYNAMIC PRODUCT ARRAY DATA (ENGLISH BASE)
-// =========================================================================
 const productsList = [
     {
         id: 1,
@@ -32,12 +26,8 @@ const productsList = [
     }
 ];
 
-// Global Active States
 let currentCurrency = "USD $";
 
-// =========================================================================
-// 3. PRODUCT RENDERING ENGINE
-// =========================================================================
 function renderProductsGrid() {
     const gridContainer = document.getElementById('productsGrid');
     if (!gridContainer) return; 
@@ -62,7 +52,6 @@ function renderProductsGrid() {
     });
 }
 
-// Simple interactive cart counter
 let cartCount = 0;
 function addToCart() {
     cartCount++;
@@ -74,9 +63,6 @@ function addToCart() {
     }
 }
 
-// =========================================================================
-// 4. REGIONAL MODAL LOGIC EVENTS (CURRENCY ONLY)
-// =========================================================================
 const modal = document.getElementById('localeModal');
 const openBtn = document.getElementById('openLocaleModal');
 const closeBtn = document.getElementById('closeLocaleModal');
@@ -97,15 +83,11 @@ if(openBtn && closeBtn && saveBtn) {
     });
 }
 
-// Run layout on page load
 document.addEventListener("DOMContentLoaded", () => {
     renderProductsGrid();
     startAutoSlide();
 });
 
-// =========================================================================
-// 5. HERO CAROUSEL LOGIC
-// =========================================================================
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
