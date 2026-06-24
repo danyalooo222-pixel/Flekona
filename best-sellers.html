@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Sellers | Top Marketplace Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Best Sellers Dashboard Layout */
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        /* Hero Banner for Top Products */
+        .bestseller-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .bestseller-hero h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin: 0 0 10px 0;
+        }
+
+        .bestseller-hero p {
+            color: #94a3b8;
+            font-size: 15px;
+            margin: 0;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* Main Workspace Container */
+        .catalog-layout {
+            max-width: 1400px;
+            margin: 50px auto;
+            padding: 0 30px;
+            box-sizing: border-box;
+        }
+
+        /* Dynamic Product Grid Matrix */
+        .products-grid-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* Ranked Inventory Display Cards */
+        .product-item-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-item-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Amazon-Style Ranking Badge Anchor */
+        .rank-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #f59e0b; /* Golden Rank Accent color */
+            color: #0f172a;
+            font-size: 11.5px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 2;
+        }
+
+        .image-placeholder-frame {
+            background: #f1f5f9;
+            aspect-ratio: 16 / 11;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .product-card-details {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card-details h2 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            color: #0f172a;
+            line-height: 1.4;
+        }
+
+        .product-item-vendor {
+            font-size: 12.5px;
+            color: #64748b;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        /* Sales Velocity Indicator UI Elements */
+        .sales-velocity-bar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #10b981; /* High volume metric green */
+            font-weight: 600;
+            margin-bottom: 20px;
+            background: #ecfdf5;
+            padding: 6px 10px;
+            border-radius: 4px;
+            width: fit-content;
+        }
+
+        .product-price-row {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 14px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .item-price-token {
+            font-size: 18px;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .btn-quick-add {
+            background: #0f172a;
+            color: #ffffff;
+            border: none;
+            padding: 10px 16px;
+            font-size: 12.5px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-quick-add:hover {
+            background: #1e293b;
+        }
+
+        /* Screen Responsive Custom Adjustment */
+        @media (max-width: 640px) {
+            .bestseller-hero {
+                padding: 40px 20px;
+            }
+            .bestseller-hero h1 {
+                font-size: 1.75rem;
+            }
+            .catalog-layout {
+                padding: 0 20px;
+                margin: 30px auto;
+            }
+        }
+
+        .catalog-footer {
+            background-color: #08090c;
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 13px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 120px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Corporate Navigation Header Bar -->
+    <header class="navbar" style="background:#ffffff; border-bottom:1px solid #e2e8f0; padding: 15px 40px;">
+        <div class="nav-logo">
+               <a href="#" class="logo-link">
+                <img src="logo.webp" alt="lekona logo" class="brand-logo">
+                <span class="brand-text">lekona</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Top Hero Segment Tracker -->
+    <section class="bestseller-hero">
+        <h1>Our Best Sellers</h1>
+        <p>The most popular demand products across the Flekona architecture network, calculated hourly based on algorithmic checkout volume matrix data.</p>
+    </section>
+
+    <!-- Main Core Dashboard Workspace Field -->
+    <main class="catalog-layout">
+        <div class="products-grid-matrix">
+            
+            <!-- Rank #1 Product Card Item -->
+            <div class="product-item-card">
+                <div class="rank-badge">Rank #1</div>
+                <div class="image-placeholder-frame">SaaS Engine Template</div>
+                <div class="product-card-details">
+                    <h2>Automated Payment Gateway Router Boilerplate</h2>
+                    <span class="product-item-vendor">By DevLabs Global</span>
+                    <div class="sales-velocity-bar">
+                        <svg style="width:14px; height:14px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" /></svg>
+                        <span>840+ sold this week</span>
+                    </div>
+                    <div class="product-price-row">
+                        <span class="item-price-token">$89.00</span>
+                        <button class="btn-quick-add">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rank #2 Product Card Item -->
+            <div class="product-item-card">
+                <div class="rank-badge">Rank #2</div>
+                <div class="image-placeholder-frame">Premium UI Core Kit</div>
+                <div class="product-card-details">
+                    <h2>Minimalist Admin Dashboard Design Kit Vector</h2>
+                    <span class="product-item-vendor">By Apex Digital Studio</span>
+                    <div class="sales-velocity-bar">
+                        <svg style="width:14px; height:14px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" /></svg>
+                        <span>620+ sold this week</span>
+                    </div>
+                    <div class="product-price-row">
+                        <span class="item-price-token">$49.00</span>
+                        <button class="btn-quick-add">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rank #3 Product Card Item -->
+            <div class="product-item-card">
+                <div class="rank-badge">Rank #3</div>
+                <div class="image-placeholder-frame">Icon Blueprint Node</div>
+                <div class="product-card-details">
+                    <h2>Global Commerce Vector Icon Set (250+ Assets)</h2>
+                    <span class="product-item-vendor">By Pixel Core Co.</span>
+                    <div class="sales-velocity-bar">
+                        <svg style="width:14px; height:14px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" /></svg>
+                        <span>410+ sold this week</span>
+                    </div>
+                    <div class="product-price-row">
+                        <span class="item-price-token">$29.00</span>
+                        <button class="btn-quick-add">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rank #4 Product Card Item -->
+            <div class="product-item-card">
+                <div class="rank-badge">Rank #4</div>
+                <div class="image-placeholder-frame">E-Book Template</div>
+                <div class="product-card-details">
+                    <h2>The Independent Creator Blueprint Vol 1</h2>
+                    <span class="product-item-vendor">By Flekona Publishing</span>
+                    <div class="sales-velocity-bar">
+                        <svg style="width:14px; height:14px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" /></svg>
+                        <span>190+ sold this week</span>
+                    </div>
+                    <div class="product-price-row">
+                        <span class="item-price-token">$19.00</span>
+                        <button class="btn-quick-add">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Clean Corporate Basement Footer -->
+    <footer class="catalog-footer">
+        <p>&copy; 2026 Flekona Platform Inc. Real-time transaction matrices reset nightly.</p>
+    </footer>
+
+</body>
+</html>

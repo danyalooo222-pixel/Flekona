@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Report | Flekona Trust & Safety</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Trust & Safety System Theme */
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        .report-wrapper {
+            max-width: 750px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        /* Portal Core Workcard */
+        .report-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.01);
+        }
+
+        .report-card h1 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin: 0 0 8px 0;
+            color: #0f172a;
+        }
+
+        .report-card .subtitle {
+            color: #64748b;
+            font-size: 14.5px;
+            margin: 0 0 35px 0;
+            line-height: 1.5;
+        }
+
+        /* Form Configuration Layout */
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #ef4444; /* Alert red tone to signify safety tracking actions */
+        }
+
+        /* Custom styling for file upload area */
+        .file-upload-wrapper {
+            position: relative;
+            border: 2px dashed #cbd5e1;
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+            background: #f8fafc;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .file-upload-wrapper:hover {
+            border-color: #94a3b8;
+        }
+
+        .file-upload-wrapper input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-upload-text {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .file-upload-text strong {
+            color: #4f46e5;
+        }
+
+        .btn-report-submit {
+            width: 100%;
+            background: #0f172a;
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-report-submit:hover {
+            background: #1e293b;
+        }
+
+        /* Success Visual Shield Modal (Initially Hidden) */
+        .success-overlay {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .success-shield-icon {
+            width: 56px;
+            height: 56px;
+            background: #fee2e2;
+            color: #ef4444;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+        }
+
+        .success-overlay h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .success-overlay p {
+            color: #475569;
+            font-size: 14.5px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .report-footer {
+            background-color: #08090c;
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 13px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar" style="background:#ffffff; border-bottom:1px solid #e2e8f0; padding: 15px 40px;">
+        <div class="nav-logo">
+             <a href="#" class="logo-link">
+                <img src="logo.webp" alt="lekona logo" class="brand-logo">
+                <span class="brand-text">lekona Safety</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="report-wrapper">
+        <section class="report-card">
+            
+            <div id="reportFormWorkspace">
+                <h1>Flekona Reporting Center</h1>
+                <p class="subtitle">Flag counterfeit merchandise, marketplace listing anomalies, intellectual property violations, or fraudulent user entities systematically.</p>
+                
+                <form onsubmit="processSafetySubmission(event)">
+                    <div class="form-group">
+                        <label for="reporterEmail">Your Contact Email Address</label>
+                        <input type="email" id="reporterEmail" required placeholder="name@domain.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="violationType">Nature of Safety Infraction</label>
+                        <select id="violationType" required>
+                            <option value="" disabled selected>Select violation track...</option>
+                            <option value="ip">Intellectual Property / Trademark Infringement</option>
+                            <option value="counterfeit">Counterfeit / Fraudulent Goods</option>
+                            <option value="scam">Merchant Behavior / Billing Scraping</option>
+                            <option value="other">General Platform Policy Non-Compliance</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="targetUrl">Offending Product URL or Merchant Profile Link</label>
+                        <input type="url" id="targetUrl" required placeholder="https://flekona.com/store/item-id">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="incidentSummary">Comprehensive Case Breakdown</label>
+                        <textarea id="incidentSummary" rows="5" required placeholder="Detail explicit timestamps, specific discrepancies, or legal verification markers contextually..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Supporting Evidence / Verification Documentation (Optional)</label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="evidenceFiles" multiple>
+                            <div class="file-upload-text">
+                                <svg style="width:24px; height:24px; color:#64748b; margin-bottom:6px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" /></svg>
+                                <p style="margin:0;">Drag and drop files here, or <strong>browse local drive</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-report-submit">File Safety Claim Report</button>
+                </form>
+            </div>
+
+            <div id="successLayout" class="success-overlay">
+                <div class="success-shield-icon">
+                    <svg style="width:28px; height:28px;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                </div>
+                <h2>Report Logged Successfully</h2>
+                <p>Your data payload has been safely submitted to our global security desk. A Trust and Safety coordinator will audit the target references within 24 business hours. Ticket ID sequence: <strong>#SEC-2026-FLK</strong>.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="report-footer">
+        <p>&copy; 2026 Flekona Platform Inc. Security channels, dmca requests, and compliance audit frameworks are monitored continually.</p>
+    </footer>
+
+    <script>
+        function processSafetySubmission(event) {
+            event.preventDefault(); // Stop native page reload transitions
+            
+            // Hide the active data capture panel view area
+            document.getElementById('reportFormWorkspace').style.display = 'none';
+            
+            // Display the clean success status overlay element box
+            document.getElementById('successLayout').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

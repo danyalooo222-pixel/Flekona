@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flekon Press Center | Media & Assets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Corporate Press Room Aesthetics */
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .media-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 40px;
+        }
+
+        /* Top Hero Header */
+        .media-header {
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 40px;
+            margin-bottom: 50px;
+        }
+
+        .media-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .media-header p {
+            color: #475569;
+            font-size: 1.1rem;
+        }
+
+        /* Two Column Layout: News Feed vs Assets Sidebar */
+        .media-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        /* Left Side: Press Releases */
+        .press-feed h2, .sidebar-section h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+            color: #0f172a;
+        }
+
+        .release-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .release-date {
+            font-size: 12px;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .release-item h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .release-item p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 14px;
+        }
+
+        .download-text-link {
+            font-size: 14px;
+            font-weight: 600;
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .download-text-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Right Side: Media Assets Kit */
+        .sidebar-section {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .asset-card {
+            border: 1px dashed #cbd5e1;
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+            background: #f8fafc;
+            margin-bottom: 16px;
+        }
+
+        .asset-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .asset-spec {
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn-download:hover {
+            background: #334155;
+        }
+
+        /* Press Contact Card Styling */
+        .contact-box p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 12px;
+        }
+
+        .contact-box strong {
+            color: #0f172a;
+        }
+
+        /* Responsive Controls */
+        @media (max-width: 968px) {
+            .media-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .media-footer {
+            background-color: #08090c;
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 13px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Corporate Navigation Baseline -->
+    <header class="navbar">
+        <div class="nav-logo">
+            <a href="index.html" class="logo-link">
+                <img src="logo.webp" alt="Flekon logo" class="brand-logo">
+                <span class="brand-text">lekon</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="media-container">
+        
+        <header class="media-header">
+            <h1>Press Room</h1>
+            <p>Official resources, company announcements, and verified brand assets for the Flekon digital ecosystem.</p>
+        </header>
+
+        <div class="media-grid">
+            
+            <!-- Left Side Column: News Stream -->
+            <section class="press-feed">
+                <h2>Recent Announcements</h2>
+                
+                <article class="release-item">
+                    <span class="release-date">June 2026</span>
+                    <h3>Flekon Infrastructure Deploys Instant Image Optimization Protocol</h3>
+                    <p>Today Flekon rolled out its next-generation asset loading layout framework, shaving off critical rendering overhead for visitors loading heavy storefront assets globally.</p>
+                    <a href="#" class="download-text-link">Read Full Release PDF →</a>
+                </article>
+
+                <article class="release-item">
+                    <span class="release-date">May 2026</span>
+                    <h3>Flekon Expands Supplier Verification Networks</h3>
+                    <p>Announcing structural verification updates to our fulfillment platform, enabling vetted procurement agents to systematically connect directly with independent merchant groups.</p>
+                    <a href="#" class="download-text-link">Read Full Release PDF →</a>
+                </article>
+            </section>
+
+            <!-- Right Side Column: Media Kit Downloads & Inquiries -->
+            <aside class="media-sidebar">
+                
+                <div class="sidebar-section">
+                    <h2>Brand Assets Kit</h2>
+                    
+                    <!-- Asset Item 1 -->
+                    <div class="asset-card">
+                        <span class="asset-title">Official Flekon Logo</span>
+                        <span class="asset-spec">PNG, SVG (Vector format) • Dark & Light variants</span>
+                        <a href="#" class="btn-download">Download Kit</a>
+                    </div>
+
+                    <!-- Asset Item 2 -->
+                    <div class="asset-card">
+                        <span class="asset-title">Product Interface Assets</span>
+                        <span class="asset-spec">High-res interface layouts & application cards</span>
+                        <a href="#" class="btn-download">Download ZIP</a>
+                    </div>
+                </div>
+
+                <div class="sidebar-section contact-box">
+                    <h2>Media Relations</h2>
+                    <p>For press inquiries, informational reviews, or interview coordination, reach out to our institutional communication desks:</p>
+                    <p><strong>Email:</strong> press@flekon.com</p>
+                    <p><strong>Response Window:</strong> Under 24 Business Hours</p>
+                </div>
+
+            </aside>
+
+        </div>
+    </main>
+
+    <footer class="media-footer">
+        <p>&copy; 2026 Flekon Platform Inc. All press resources are open for editorial distribution usage.</p>
+    </footer>
+
+</body>
+</html>

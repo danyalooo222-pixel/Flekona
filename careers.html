@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at Flekona | Build the Future of Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modern Careers Corporate Aesthetic */
+        body {
+            background-color: #f8f9fa;
+            color: #1a1e26;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Hero Recruitment Search Panel */
+        .careers-hero {
+            background: linear-gradient(rgba(15, 17, 21, 0.85), rgba(26, 30, 38, 0.95)), 
+                        url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop') no-repeat center/cover;
+            color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .careers-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .careers-hero p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        /* Amazon-Style Job Search Box Container */
+        .job-search-box {
+            background: #ffffff;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            display: flex;
+            width: 100%;
+            max-width: 700px;
+            gap: 10px;
+        }
+
+        .job-search-box input {
+            flex: 1;
+            border: 1px solid #e2e8f0;
+            padding: 14px 18px;
+            font-size: 15px;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .job-search-box button {
+            background-color: #111111;
+            color: #ffffff;
+            border: none;
+            padding: 0 30px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .job-search-box button:hover {
+            background-color: #2d3139;
+        }
+
+        /* Department Grid Layout */
+        .careers-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+
+        .section-headline {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+            letter-spacing: -0.5px;
+        }
+
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .team-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 30px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .team-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+            border-color: #cbd5e1;
+        }
+
+        .team-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #111111;
+        }
+
+        .team-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .openings-count {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #000000;
+            border-bottom: 2px solid #111111;
+            padding-bottom: 2px;
+        }
+
+        /* Simplified Clean Careers Footer */
+        .careers-footer {
+            background-color: #08090c;
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 13px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-logo">
+            <a href="index.html" class="logo-link">
+                <img src="logo.webp" alt="Flekona logo" class="brand-logo">
+                <span class="brand-text">lekona</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="careers-hero">
+            <h1>Find your next challenge.</h1>
+            <p>Join our decentralized teams building cutting-edge distribution models and optimized frontend architectures for modern global storefronts.</p>
+            
+            <div class="job-search-box">
+                <input type="text" placeholder="Search by job title, department, or keyword...">
+                <button type="button">Search Jobs</button>
+            </div>
+        </section>
+
+        <section class="careers-container">
+            <h2 class="section-headline">Explore Teams at Flekona</h2>
+            
+            <div class="teams-grid">
+                <div class="team-card">
+                    <h3>Software Engineering</h3>
+                    <p>Develop lightning-fast web protocols, multi-currency engines, and optimized user interfaces that power thousands of continuous visual marketplace sessions.</p>
+                    <span class="openings-count">View 4 Openings →</span>
+                </div>
+
+                <div class="team-card">
+                    <h3>Operations & Logistics</h3>
+                    <p>Collaborate with global production partners and specialized procurement agents to shorten supply pipelines and perfect automated fulfillment paths.</p>
+                    <span class="openings-count">View 2 Openings →</span>
+                </div>
+
+                <div class="team-card">
+                    <h3>UX / UI Product Design</h3>
+                    <p>Shape clean visual discovery storefronts. Craft highly accessible layouts and cross-platform interactions that prevent user checkout drop-offs.</p>
+                    <span class="openings-count">View 1 Opening →</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="careers-footer">
+        <p>&copy; 2026 Flekona Platform Inc. Jobs and recruitment privacy parameters are globally protected.</p>
+    </footer>
+
+</body>
+</html>

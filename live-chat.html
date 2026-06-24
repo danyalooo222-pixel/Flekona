@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat Support | Flekona Client Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Dedicated Messaging Application Aesthetics */
+        body {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-app-container {
+            flex: 1;
+            max-width: 900px;
+            width: 100%;
+            margin: 40px auto;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Console App Header */
+        .chat-app-header {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .agent-profile {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .avatar-status-wrapper {
+            position: relative;
+        }
+
+        .agent-avatar {
+            width: 42px;
+            height: 42px;
+            background: #334155;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            color: #38bdf8;
+            border: 2px solid #1e293b;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            background: #10b981;
+            border: 2px solid #0f172a;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .agent-info h2 {
+            font-size: 15px;
+            font-weight: 700;
+            margin: 0 0 3px 0;
+        }
+
+        .agent-info span {
+            font-size: 12px;
+            color: #94a3b8;
+            display: block;
+        }
+
+        /* Stream Viewport Message Grid */
+        .chat-viewport {
+            flex: 1;
+            padding: 24px;
+            background: #fafafa;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .message-row {
+            display: flex;
+            flex-direction: column;
+            max-width: 75%;
+        }
+
+        .message-row.system {
+            align-self: flex-start;
+        }
+
+        .message-row.user {
+            align-self: flex-end;
+        }
+
+        .message-bubble {
+            padding: 14px 18px;
+            font-size: 14.5px;
+            line-height: 1.5;
+            border-radius: 12px;
+        }
+
+        .system .message-bubble {
+            background: #ffffff;
+            color: #1e293b;
+            border: 1px solid #e2e8f0;
+            border-top-left-radius: 2px;
+        }
+
+        .user .message-bubble {
+            background: #0f172a;
+            color: #ffffff;
+            border-top-right-radius: 2px;
+        }
+
+        .message-meta {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 5px;
+            padding: 0 4px;
+        }
+        
+        .user .message-meta {
+            text-align: right;
+        }
+
+        /* Action Console Input Tray */
+        .chat-input-tray {
+            background: #ffffff;
+            padding: 20px 24px;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .chat-input-tray input {
+            flex: 1;
+            padding: 14px 18px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .chat-input-tray input:focus {
+            border-color: #0f172a;
+        }
+
+        .btn-send {
+            background: #0f172a;
+            color: #ffffff;
+            border: none;
+            padding: 14px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-send:hover {
+            background: #1e293b;
+        }
+
+        /* App Layout Responsive Break */
+        @media (max-width: 932px) {
+            .chat-app-container {
+                margin: 0;
+                border-radius: 0;
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar" style="background:#ffffff; border-bottom:1px solid #e2e8f0; padding: 15px 40px;">
+        <div class="nav-logo">
+             <a href="#" class="logo-link">
+                <img src="logo.webp" alt="lekona logo" class="brand-logo">
+                <span class="brand-text">lekona Support</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="chat-app-container">
+        
+        <div class="chat-app-header">
+            <div class="agent-profile">
+                <div class="avatar-status-wrapper">
+                    <div class="agent-avatar">FLK</div>
+                    <div class="status-dot"></div>
+                </div>
+                <div class="agent-info">
+                    <h2>Flekona Support center</h2>
+                    <span>Operational Routing System</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-viewport" id="chatViewport">
+            
+            <div class="message-row system">
+                <div class="message-bubble">
+                    Hello! Welcome to the Flekona live chat workspace. Tell me about your issue, or paste a reference Order ID directly to query your active logistics pipeline.
+                </div>
+                <span class="message-meta">Just now • Assistant</span>
+            </div>
+
+        </div>
+
+        <form id="chatForm" onsubmit="transmitMessage(event)" class="chat-input-tray">
+            <input type="text" id="userMsgInput" autocomplete="off" placeholder="Write your question or request parameters here..." required>
+            <button type="submit" class="btn-send">Send Message</button>
+        </form>
+
+    </main>
+
+    <script>
+        function transmitMessage(event) {
+            event.preventDefault(); // Stop webpage refresh reload routines
+            
+            const inputField = document.getElementById('userMsgInput');
+            const messageText = inputField.value.trim();
+            if (!messageText) return;
+
+            const viewport = document.getElementById('chatViewport');
+            const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            // 1. Create and append the User Message bubble row element
+            const userRow = document.createElement('div');
+            userRow.className = 'message-row user';
+            userRow.innerHTML = `
+                <div class="message-bubble">${escapeHTML(messageText)}</div>
+                <span class="message-meta">${timestamp} • You</span>
+            `;
+            viewport.appendChild(userRow);
+
+            // Clear entry field buffer points
+            inputField.value = '';
+            
+            // Auto-scroll viewport window safely downwards
+            viewport.scrollTop = viewport.scrollHeight;
+
+            // 2. Trigger an automated, context-aware simulation loop reply after 1 second
+            setTimeout(() => {
+                const systemRow = document.createElement('div');
+                systemRow.className = 'message-row system';
+                systemRow.innerHTML = `
+                    <div class="message-bubble">
+                        Thank you for routing those parameters. Your request has been passed to our human operations desk. A verification agent will review this thread within 5 minutes.
+                    </div>
+                    <span class="message-meta">${timestamp} • Concierge Agent</span>
+                `;
+                viewport.appendChild(systemRow);
+                viewport.scrollTop = viewport.scrollHeight;
+            }, 1000);
+        }
+
+        // Helper function to prevent basic script input parsing security issues
+        function escapeHTML(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+        }
+    </script>
+
+</body>
+</html>

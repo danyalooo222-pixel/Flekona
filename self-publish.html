@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Publish on Flekona | Digital Creator Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Digital Creator Studio Theme */
+        body {
+            background-color: #fafafa;
+            color: #0f172a;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .publish-hero {
+            background: linear-gradient(135deg, #090a0f 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 90px 20px;
+            text-align: center;
+        }
+
+        .publish-hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 15px;
+        }
+
+        .publish-hero p {
+            color: #94a3b8;
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .publish-grid {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        /* Left Side Column: Royalty Layout */
+        .benefits-panel h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .benefit-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #0f172a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .royalty-badge {
+            background: #f1f5f9;
+            color: #0f172a;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .benefit-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 0;
+        }
+
+        /* Right Side Column: Portal Card */
+        .portal-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.02);
+        }
+
+        .portal-card h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .portal-card .subtitle {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: #0f172a;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: #0f172a;
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: #1e293b;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 968px) {
+            .publish-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 20px;
+            }
+            .publish-hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .publish-footer {
+            background-color: #08090c;
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 13px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Corporate Navigation Baseline -->
+    <header class="navbar">
+        <div class="nav-logo">
+            <a href="index.html" class="logo-link">
+                <img src="logo.webp" alt="Flekona logo" class="brand-logo">
+                <span class="brand-text">lekona</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="publish-hero">
+            <h1>Own Your Audience. Distribute Directly.</h1>
+            <p>Publish independent digital books, design catalogs, and creative media blueprints directly into Flekona's globally optimized checkout pipeline.</p>
+        </section>
+
+        <!-- Dynamic Alignment Workspace -->
+        <div class="publish-grid">
+            
+            <!-- Left Side: Creator Benefits -->
+            <section class="benefits-panel">
+                <h2>Publisher Advantages</h2>
+                
+                <div class="benefit-card">
+                    <h3>Keep High Margins <span class="royalty-badge">Up to 70% Royalty</span></h3>
+                    <p>Retain maximum control over your content pricing parameters. We distribute digital assets securely without multi-layered wholesale deductions.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>Global Localization Engine <span class="royalty-badge">Automated</span></h3>
+                    <p>Your listing pages automatically handle cross-border regional pricing arrays, ensuring international buyers see clean, relevant numbers instantly.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>Instant Asset Security <span class="royalty-badge">Encrypted</span></h3>
+                    <p>Flekona's underlying technical nodes handle automated item distribution down to the final verification link immediately upon successful customer payments.</p>
+                </div>
+            </section>
+
+            <!-- Right Side: Creator Intake Box -->
+            <section class="portal-card">
+                <h2>Creator Registration</h2>
+                <p class="subtitle">Complete your identity parameters to verify your creator workspace account.</p>
+                
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="creatorName">Pen Name / Creator Identity</label>
+                        <input type="text" id="creatorName" required placeholder="e.g., Jane Doe Editorial">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assetType">Primary Media Asset Form</label>
+                        <select id="assetType" required>
+                            <option value="" disabled selected>Select asset type...</option>
+                            <option value="ebook">Digital Books & Guides</option>
+                            <option value="graphics">Design Templates & UI Assets</option>
+                            <option value="audio">Educational Audio & Media Kits</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="creatorEmail">Account Email Address</label>
+                        <input type="email" id="creatorEmail" required placeholder="name@creatorstudio.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="portfolioUrl">Existing Portfolio or Website Link (Optional)</label>
+                        <input type="url" id="portfolioUrl" placeholder="https://myportfolio.com">
+                    </div>
+
+                    <button type="submit" class="btn-submit">Launch Creator Studio</button>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="publish-footer">
+        <p>&copy; 2026 Flekona Platform Inc. Creator distributions and media rights are legally protected.</p>
+    </footer>
+
+</body>
+</html>

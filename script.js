@@ -5,26 +5,332 @@ const currencyRates = {
     "CAD $": { symbol: "CA$", rate: 1.37, formatRight: false }
 };
 
-const productsList = [
-    {
-        id: 1,
-        image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=600&auto=format&fit=crop",
-        basePriceUSD: 29.99,
-        name: "Minimalist Wireless Earbuds"
-    },
-    {
-        id: 2,
-        image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?q=80&w=600&auto=format&fit=crop",
-        basePriceUSD: 89.00,
-        name: "Smart Fitness Chronograph"
-    },
-    {
-        id: 3,
-        image: "https://images.unsplash.com/photo-1616353110314-70bca557cd7d?q=80&w=600&auto=format&fit=crop",
-        basePriceUSD: 45.50,
-        name: "Ergonomic Bamboo Laptop Stand"
-    }
+// one product
+const marketplaceProducts = [
+    { id: 1, title: "Automated Payment Gateway Router", author: "DevLabs Global", rating: 4.9, reviews: 42, price: "$89.00" },
+    { id: 2, title: "Minimalist Admin Dashboard Kit", author: "Apex Studio", rating: 4.7, reviews: 128, price: "$49.00" },
+    { id: 3, title: "The Independent Creator Blueprint", author: "Flekona Pubs", rating: 5.0, reviews: 19, price: "$19.00" },
+    { id: 4, title: "Global Commerce Icon Framework", author: "Pixel Core Co.", rating: 4.6, reviews: 63, price: "$29.00" },
+    { id: 5, title: "Real-time Analytics Web Hooks", author: "Node Labs", rating: 4.8, reviews: 31, price: "$79.00" },
+    { id: 6, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 7, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 8, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 9, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 10, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 11, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 12, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 13, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 14, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 15, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 16, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 17, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 18, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 19, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 20, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
 ];
+
+let currentSliderIndex = 0;
+
+// two Product
+const twomarketplaceProducts = [
+    { id: 1, title: "Automated Payment Gateway Router", author: "DevLabs Global", rating: 4.9, reviews: 42, price: "$89.00" },
+    { id: 2, title: "Minimalist Admin Dashboard Kit", author: "Apex Studio", rating: 4.7, reviews: 128, price: "$49.00" },
+    { id: 3, title: "The Independent Creator Blueprint", author: "Flekona Pubs", rating: 5.0, reviews: 19, price: "$19.00" },
+    { id: 4, title: "Global Commerce Icon Framework", author: "Pixel Core Co.", rating: 4.6, reviews: 63, price: "$29.00" },
+    { id: 5, title: "Real-time Analytics Web Hooks", author: "Node Labs", rating: 4.8, reviews: 31, price: "$79.00" },
+    { id: 6, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 7, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 8, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 9, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 10, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 11, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 12, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 13, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 14, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 15, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 16, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 17, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 18, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 19, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 20, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+];
+
+let currenttwoSliderIndex = 0;
+
+// three Product
+const threemarketplaceProducts = [
+    { id: 1, title: "Automated Payment Gateway Router", author: "DevLabs Global", rating: 4.9, reviews: 42, price: "$89.00" },
+    { id: 2, title: "Minimalist Admin Dashboard Kit", author: "Apex Studio", rating: 4.7, reviews: 128, price: "$49.00" },
+    { id: 3, title: "The Independent Creator Blueprint", author: "Flekona Pubs", rating: 5.0, reviews: 19, price: "$19.00" },
+    { id: 4, title: "Global Commerce Icon Framework", author: "Pixel Core Co.", rating: 4.6, reviews: 63, price: "$29.00" },
+    { id: 5, title: "Real-time Analytics Web Hooks", author: "Node Labs", rating: 4.8, reviews: 31, price: "$79.00" },
+    { id: 6, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 7, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 8, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 9, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 10, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 11, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 12, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 13, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 14, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 15, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 16, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 17, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 18, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 19, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+    { id: 20, title: "Clean Retro Typography Layouts", author: "Studio Vector", rating: 4.9, reviews: 55, price: "$35.00" },
+];
+
+let currentthreeSliderIndex = 0;
+
+// one product
+function renderCarouselInventory() {
+    const track = document.getElementById('product-slider-track');
+    if (!track) return;
+
+    track.innerHTML = marketplaceProducts.map(product => `
+        <div class="carousel-product-card">
+            <div class="card-media-wrapper">
+                <span>${product.category} Blueprint Preview</span>
+            </div>
+            <div class="card-body-content">
+                <h3>${product.title}</h3>
+                <span class="card-author-label">By ${product.author}</span>
+                
+                <div class="rating-stars-row">
+                    <span>★ ${product.rating.toFixed(1)}</span>
+                    <span class="review-count">(${product.reviews} reviews)</span>
+                </div>
+
+                <div class="card-footer-action-row">
+                    <span class="card-price-value">${product.price}</span>
+                    <button class="card-buy-btn" onclick="alert('Asset added to checkout index context')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    updateSliderNavigationState();
+}
+
+// two product
+function rendertwoCarouselInventory() {
+    const track = document.getElementById('two-slider-track');
+    if (!track) return;
+
+    track.innerHTML = twomarketplaceProducts.map(product => `
+        <div class="carousel-product-card">
+            <div class="card-media-wrapper">
+                <span>${product.category} Blueprint Preview</span>
+            </div>
+            <div class="card-body-content">
+                <h3>${product.title}</h3>
+                <span class="card-author-label">By ${product.author}</span>
+                
+                <div class="rating-stars-row">
+                    <span>★ ${product.rating.toFixed(1)}</span>
+                    <span class="review-count">(${product.reviews} reviews)</span>
+                </div>
+
+                <div class="card-footer-action-row">
+                    <span class="card-price-value">${product.price}</span>
+                    <button class="card-buy-btn" onclick="alert('Asset added to checkout index context')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    updateSliderNavigationState();
+}
+
+// three product
+function renderthreeCarouselInventory() {
+    const track = document.getElementById('three-slider-track');
+    if (!track) return;
+
+    track.innerHTML = threemarketplaceProducts.map(product => `
+        <div class="carousel-product-card">
+            <div class="card-media-wrapper">
+                <span>${product.category} Blueprint Preview</span>
+            </div>
+            <div class="card-body-content">
+                <h3>${product.title}</h3>
+                <span class="card-author-label">By ${product.author}</span>
+                
+                <div class="rating-stars-row">
+                    <span>★ ${product.rating.toFixed(1)}</span>
+                    <span class="review-count">(${product.reviews} reviews)</span>
+                </div>
+
+                <div class="card-footer-action-row">
+                    <span class="card-price-value">${product.price}</span>
+                    <button class="card-buy-btn" onclick="alert('Asset added to checkout index context')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    updateSliderNavigationState();
+}
+
+// one product
+function getVisibleCardsCount() {
+    const width = window.innerWidth;
+    if (width > 1200) return 4;
+    if (width > 900) return 3;
+    if (width > 600) return 2;
+    return 1;
+}
+
+// one product
+function moveSlider(direction) {
+    const totalItems = marketplaceProducts.length;
+    const visibleCards = getVisibleCardsCount();
+    const maxIndex = totalItems - visibleCards;
+
+    currentSliderIndex += direction;
+
+    // Bounds safety clamping bounds checks
+    if (currentSliderIndex < 0) currentSliderIndex = 0;
+    if (currentSliderIndex > maxIndex) currentSliderIndex = maxIndex;
+
+    const track = document.getElementById('product-slider-track');
+    const cardElement = document.querySelector('.carousel-product-card');
+    
+    if (track && cardElement) {
+        // Grab real computed layout width metrics dynamically
+        const cardWidth = cardElement.getBoundingClientRect().width;
+        // Extract layout base grid gaps (30px defined in stylesheet)
+        const gapOffset = 30;
+        
+        // Calculate the translation shift
+        const transformShiftAmount = currentSliderIndex * (cardWidth + gapOffset);
+        track.style.transform = `translateX(-${transformShiftAmount}px)`;
+    }
+
+    updateSliderNavigationState();
+}
+
+// one product
+function updateSliderNavigationState() {
+    const totalItems = marketplaceProducts.length;
+    const visibleCards = getVisibleCardsCount();
+    const maxIndex = totalItems - visibleCards;
+
+    const prevBtn = document.getElementById('btn-prev');
+    const nextBtn = document.getElementById('btn-next');
+
+    if (prevBtn && nextBtn) {
+        prevBtn.disabled = currentSliderIndex === 0;
+        nextBtn.disabled = currentSliderIndex >= maxIndex;
+    }
+}
+
+// two product
+function twomoveSlider(direction) {
+    const totalItems = twomarketplaceProducts.length;
+    const visibleCards = getVisibleCardsCount();
+    const maxIndex = totalItems - visibleCards;
+
+    currenttwoSliderIndex += direction;
+
+    // Bounds safety clamping bounds checks
+    if (currenttwoSliderIndex < 0) currenttwoSliderIndex = 0;
+    if (currenttwoSliderIndex > maxIndex) currenttwoSliderIndex = maxIndex;
+
+    const track = document.getElementById('two-slider-track');
+    const cardElement = document.querySelector('.carousel-product-card');
+    
+    if (track && cardElement) {
+        // Grab real computed layout width metrics dynamically
+        const cardWidth = cardElement.getBoundingClientRect().width;
+        // Extract layout base grid gaps (30px defined in stylesheet)
+        const gapOffset = 30;
+        
+        // Calculate the translation shift
+        const transformShiftAmount = currenttwoSliderIndex * (cardWidth + gapOffset);
+        track.style.transform = `translateX(-${transformShiftAmount}px)`;
+    }
+
+    updatetwoSliderNavigationState();
+}
+
+// two product
+function updatetwoSliderNavigationState() {
+    const totalItems = twomarketplaceProducts.length;
+    const visibleCards = getVisibleCardsCount();
+    const maxIndex = totalItems - visibleCards;
+
+    const prevBtn = document.getElementById('btn-two-prev');
+    const nextBtn = document.getElementById('btn-two-next');
+
+    if (prevBtn && nextBtn) {
+        prevBtn.disabled = currenttwoSliderIndex === 0;
+        nextBtn.disabled = currenttwoSliderIndex >= maxIndex;
+    }
+}
+
+// three product
+function moveSlider(direction) {
+    const totalItems = threemarketplaceProducts.length;
+    const visibleCards = getVisibleCardsCount();
+    const maxIndex = totalItems - visibleCards;
+
+    currentthreeSliderIndex += direction;
+
+    // Bounds safety clamping bounds checks
+    if (currentthreeSliderIndex < 0) currentthreeSliderIndex = 0;
+    if (currentthreeSliderIndex > maxIndex) currentthreeSliderIndex = maxIndex;
+
+    const track = document.getElementById('three-slider-track');
+    const cardElement = document.querySelector('.carousel-product-card');
+    
+    if (track && cardElement) {
+        // Grab real computed layout width metrics dynamically
+        const cardWidth = cardElement.getBoundingClientRect().width;
+        // Extract layout base grid gaps (30px defined in stylesheet)
+        const gapOffset = 30;
+        
+        // Calculate the translation shift
+        const transformShiftAmount = currentthreeSliderIndex * (cardWidth + gapOffset);
+        track.style.transform = `translateX(-${transformShiftAmount}px)`;
+    }
+
+    updateSliderNavigationState();
+}
+
+// one product
+function updateSliderNavigationState() {
+    const totalItems = threemarketplaceProducts.length;
+    const visibleCards = getVisibleCardsCount();
+    const maxIndex = totalItems - visibleCards;
+
+    const prevBtn = document.getElementById('btn-three-prev');
+    const nextBtn = document.getElementById('btn-three-next');
+
+    if (prevBtn && nextBtn) {
+        prevBtn.disabled = currentthreeSliderIndex === 0;
+        nextBtn.disabled = currentthreeSliderIndex >= maxIndex;
+    }
+}
+
+
+// for all product just add
+document.addEventListener('DOMContentLoaded', () => {
+    renderCarouselInventory(); //one
+    rendertwoCarouselInventory(); //two
+    renderthreeCarouselInventory(); //three
+    
+    window.addEventListener('resize', () => {
+        // Reset positioning on frame resize to avoid display errors
+        currentSliderIndex = 0;
+        const track = document.getElementById('product-slider-track');
+        if (track) track.style.transform = 'translateX(0px)';
+        updateSliderNavigationState();
+    });
+});
+
+
 
 let currentCurrency = "USD $";
 
@@ -128,3 +434,4 @@ if(nextBtn && prevBtn) {
         startAutoSlide();
     });
 }
+

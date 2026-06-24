@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center | Flekona Support Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Help Center Platform Theme */
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        /* Clean Knowledge Base Search Bar Banner */
+        .help-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .help-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .help-hero p {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            outline: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            width: 20px;
+            height: 20px;
+            pointer-events: none;
+        }
+
+        /* Help Main Framework Workspace */
+        .help-container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        /* Support Category Core Grid Matrix */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .category-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 26px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-2px);
+            border-color: #cbd5e1;
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.03);
+        }
+
+        .category-icon {
+            color: #4f46e5;
+            margin-bottom: 14px;
+            display: inline-block;
+        }
+
+        .category-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            color: #0f172a;
+        }
+
+        .category-card p {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Dynamic Accordion FAQ Panel Section */
+        .faq-section {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .faq-section h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 0;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-trigger {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 20px 0;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e293b;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .faq-trigger:hover {
+            color: #0f172a;
+        }
+
+        .faq-icon {
+            transition: transform 0.2s ease;
+            color: #64748b;
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.25s ease-out;
+        }
+
+        .faq-content p {
+            padding-bottom: 20px;
+            margin: 0;
+            font-size: 14.5px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* Active Transition States */
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-trigger {
+            color: #4f46e5;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .help-hero h1 {
+                font-size: 2rem;
+            }
+            .faq-section {
+                padding: 25px 20px;
+            }
+        }
+
+        .help-footer {
+            background-color: #08090c;
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 13px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Unified Corporate Navigation Baseline Header -->
+    <header class="navbar">
+        <div class="nav-logo">
+            <a href="index.html" class="logo-link">
+                <img src="logo.webp" alt="Flekona logo" class="brand-logo">
+                <span class="brand-text">lekona</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="help-hero">
+            <h1>How can we help you?</h1>
+            <p>Search documentation, solutions, or platform performance updates instantly</p>
+            <div class="search-container">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" placeholder="Search for documentation, errors, setup workflows...">
+            </div>
+        </section>
+
+        <div class="help-container">
+            
+            <!-- Category Cards Grid Framework -->
+            <section class="category-grid">
+                <!-- Card 1 -->
+                <a href="#" class="category-card">
+                    <span class="category-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                    </span>
+                    <h3>Orders & Logistics</h3>
+                    <p>Track regional shipments, delivery route estimates, and package exception notes.</p>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="#" class="category-card">
+                    <span class="category-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                    </span>
+                    <h3>Payments & Invoices</h3>
+                    <p>Manage store multi-currency configurations, gateway payouts, and balance clearing logs.</p>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="#" class="category-card">
+                    <span class="category-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </span>
+                    <h3>Account Control</h3>
+                    <p>Update verification parameters, merchant visibility tiers, and store credentials.</p>
+                </a>
+            </section>
+
+            <!-- FAQ Accordion Module Panels -->
+            <section class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <!-- Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>How are international storefront payout schedules processed?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">
+                        <p>Merchant payouts are automatically compiled every single week. Cleared funds derived from multi-currency operations are converted and pushed cleanly to your connected bank account or active gateway profile based on your region's rolling processing delays.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>Can I change catalog pricing structures for separate global target areas?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">
+                        <p>Yes. Within your dashboard catalog setup panel, you can either let our automated currency tools adapt live values dynamically using spot exchange figures, or enter fixed custom pricing arrays manually for targeted target regions.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-trigger">
+                        <span>What verification documents do cross-border suppliers need to supply?</span>
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="faq-content">
+                        <p>To safely list heavy-volume stock channels, factories must upload basic corporate organization licensing papers, geographic production origin records, and relevant safety testing certificates depending on item class specifications.</p>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="help-footer">
+        <p>&copy; 2026 Flekona Platform Inc. System documentation and help assets are constantly verified.</p>
+    </footer>
+
+    <!-- Accordion Handling Script Logic -->
+    <script>
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const parent = trigger.parentElement;
+                const content = trigger.nextElementSibling;
+                
+                // Toggle active state element indicators
+                if (parent.classList.contains('active')) {
+                    content.style.maxHeight = null;
+                    parent.classList.remove('active');
+                } else {
+                    // Close other active items if desired, or keep open. Let's isolate for clean UX
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-content').style.maxHeight = null;
+                    });
+                    
+                    parent.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

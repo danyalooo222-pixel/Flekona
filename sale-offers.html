@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Deals & Offers | Flash Marketplace Discounts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Deals & Promotion Theme Dashboard Framework */
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        /* High-Impact Alert Notification Bar */
+        .promo-ticker-tape {
+            background: #ef4444; /* High conversion deal red */
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            padding: 10px 20px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Specialized Hero Workspace Segment */
+        .offers-hero {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .offers-hero h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin: 0 0 10px 0;
+            color: #0f172a;
+        }
+
+        .offers-hero p {
+            color: #64748b;
+            font-size: 15px;
+            margin: 0 auto;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        /* Core Catalog Grid Frame Workspace */
+        .catalog-layout {
+            max-width: 1400px;
+            margin: 50px auto;
+            padding: 0 30px;
+            box-sizing: border-box;
+        }
+
+        /* Grid Item Array Structure */
+        .products-grid-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* Specialized Inventory Promo Cards */
+        .product-item-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-item-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.08);
+            border-color: #fca5a5;
+        }
+
+        /* Bright % Off Discount Stamp Badge */
+        .discount-pill-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #ef4444; 
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 4px;
+            letter-spacing: 0.25px;
+            box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+            z-index: 2;
+        }
+
+        .image-placeholder-frame {
+            background: #f1f5f9;
+            aspect-ratio: 16 / 11;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .product-card-details {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card-details h2 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            color: #0f172a;
+            line-height: 1.4;
+        }
+
+        .product-item-vendor {
+            font-size: 12.5px;
+            color: #64748b;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .product-price-row {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 14px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        /* Combined Markdown Pricing Architecture Layout */
+        .pricing-block-combo {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .slashed-original-price {
+            font-size: 13px;
+            color: #94a3b8;
+            text-decoration: line-through;
+            font-weight: 500;
+        }
+
+        .item-price-token-sale {
+            font-size: 19px;
+            font-weight: 800;
+            color: #ef4444; /* Sale red font color value */
+        }
+
+        .btn-quick-add {
+            background: #0f172a;
+            color: #ffffff;
+            border: none;
+            padding: 10px 16px;
+            font-size: 12.5px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-quick-add:hover {
+            background: #ef4444;
+        }
+
+        /* Responsive Breakpoint Handlers */
+        @media (max-width: 640px) {
+            .offers-hero {
+                padding: 40px 20px;
+            }
+            .offers-hero h1 {
+                font-size: 1.75rem;
+            }
+            .catalog-layout {
+                padding: 0 20px;
+                margin: 30px auto;
+            }
+        }
+
+        .catalog-footer {
+            background-color: #08090c;
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 13px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 120px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Running Banner Ticker -->
+    <div class="promo-ticker-tape">
+        FLASH OFFER: USE PROMO CODE LEKONA25 FOR AN EXTRA 25% OFF AT CHECKOUT CORES
+    </div>
+
+    <!-- Main Navigation Header Area -->
+    <header class="navbar" style="background:#ffffff; border-bottom:1px solid #e2e8f0; padding: 15px 40px;">
+        <div class="nav-logo">
+           <a href="#" class="logo-link">
+                <img src="logo.webp" alt="lekona logo" class="brand-logo">
+                <span class="brand-text">lekona</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Contextual Marketing Canvas Block -->
+    <section class="offers-hero">
+        <h1>Limited-Time Offers</h1>
+        <p>Premium specialized digital developer tooling and publication licenses currently bundled under targeted markdown values.</p>
+    </section>
+
+    <!-- Main Active Frame Catalog Area -->
+    <main class="catalog-layout">
+        <div class="products-grid-matrix">
+            
+            <!-- Sale Card Item 1 -->
+            <div class="product-item-card">
+                <div class="discount-pill-tag">Save 40%</div>
+                <div class="image-placeholder-frame">Premium UI Core Kit</div>
+                <div class="product-card-details">
+                    <h2>Minimalist Admin Dashboard Design Kit Vector</h2>
+                    <span class="product-item-vendor">By Apex Digital Studio</span>
+                    <div class="product-price-row">
+                        <div class="pricing-block-combo">
+                            <span class="slashed-original-price">$49.00</span>
+                            <span class="item-price-token-sale">$29.40</span>
+                        </div>
+                        <button class="btn-quick-add">Claim Deal</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sale Card Item 2 -->
+            <div class="product-item-card">
+                <div class="discount-pill-tag">Save 15%</div>
+                <div class="image-placeholder-frame">SaaS Engine Template</div>
+                <div class="product-card-details">
+                    <h2>Automated Payment Gateway Router Boilerplate</h2>
+                    <span class="product-item-vendor">By DevLabs Global</span>
+                    <div class="product-price-row">
+                        <div class="pricing-block-combo">
+                            <span class="slashed-original-price">$89.00</span>
+                            <span class="item-price-token-sale">$75.65</span>
+                        </div>
+                        <button class="btn-quick-add">Claim Deal</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sale Card Item 3 -->
+            <div class="product-item-card">
+                <div class="discount-pill-tag">Save 50%</div>
+                <div class="image-placeholder-frame">E-Book Template</div>
+                <div class="product-card-details">
+                    <h2>The Independent Creator Blueprint Vol 1</h2>
+                    <span class="product-item-vendor">By Flekona Publishing</span>
+                    <div class="product-price-row">
+                        <div class="pricing-block-combo">
+                            <span class="slashed-original-price">$19.00</span>
+                            <span class="item-price-token-sale">$9.50</span>
+                        </div>
+                        <button class="btn-quick-add">Claim Deal</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sale Card Item 4 -->
+            <div class="product-item-card">
+                <div class="discount-pill-tag">Save 20%</div>
+                <div class="image-placeholder-frame">Icon Blueprint Node</div>
+                <div class="product-card-details">
+                    <h2>Global Commerce Vector Icon Set (250+ Assets)</h2>
+                    <span class="product-item-vendor">By Pixel Core Co.</span>
+                    <div class="product-price-row">
+                        <div class="pricing-block-combo">
+                            <span class="slashed-original-price">$29.00</span>
+                            <span class="item-price-token-sale">$23.20</span>
+                        </div>
+                        <button class="btn-quick-add">Claim Deal</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Master Layout Bottom Footer Segment -->
+    <footer class="catalog-footer">
+        <p>&copy; 2026 Flekona Platform Inc. Flash discount parameters are subject to availability limits.</p>
+    </footer>
+
+</body>
+</html>

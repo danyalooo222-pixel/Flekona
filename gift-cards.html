@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Gift Cards | Flekona Balance Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Shared E-Commerce Theme System */
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        .giftcard-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            box-sizing: border-box;
+        }
+
+        /* Generic Framework Card Architecture */
+        .workspace-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
+        }
+
+        .workspace-card h1, .workspace-card h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin: 0 0 8px 0;
+        }
+
+        .workspace-card p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0 0 28px 0;
+        }
+
+        /* Purchasing Engine Button Grid Group */
+        .amount-selection-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .btn-amount-node {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            color: #475569;
+            padding: 14px 0;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-amount-node:hover {
+            border-color: #0f172a;
+            color: #0f172a;
+        }
+
+        .btn-amount-node.selected {
+            background: #0f172a;
+            border-color: #0f172a;
+            color: #ffffff;
+        }
+
+        /* Form Controls Setup */
+        .input-block-row {
+            margin-bottom: 20px;
+        }
+
+        .input-block-row label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #475569;
+        }
+
+        .input-block-row input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        .input-block-row input:focus {
+            border-color: #4f46e5;
+        }
+
+        .btn-primary-action {
+            width: 100%;
+            background: #0f172a;
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-size: 14.5px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-primary-action:hover {
+            background: #1e293b;
+        }
+
+        /* Right Side Redemption Component Details */
+        .voucher-display-preview {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .voucher-display-preview span {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .voucher-display-preview .preview-brand {
+            font-weight: 800;
+            font-size: 18px;
+            position: absolute;
+            right: 24px;
+            top: 24px;
+            color: rgba(255, 255, 255, 0.15);
+        }
+
+        .voucher-display-preview .preview-val {
+            font-size: 32px;
+            font-weight: 800;
+            margin: 15px 0 0 0;
+            letter-spacing: -1px;
+        }
+
+        /* Interactive Status Alert Banners */
+        .alert-status-msg {
+            margin-top: 16px;
+            padding: 12px;
+            font-size: 13px;
+            border-radius: 6px;
+            font-weight: 500;
+            display: none;
+        }
+        .alert-status-msg.success {
+            background: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+
+        /* Screen Responsive Adapters */
+        @media (max-width: 992px) {
+            .giftcard-container {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+                margin: 30px auto;
+            }
+        }
+        @media (max-width: 480px) {
+            .amount-selection-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .catalog-footer {
+            background-color: #08090c;
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 13px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 120px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Unified Simple Brand Top Navigation Header -->
+    <header class="navbar" style="background:#ffffff; border-bottom:1px solid #e2e8f0; padding: 15px 40px;">
+        <div class="nav-logo">
+            <a href="#" class="logo-link">
+                <img src="logo.webp" alt="lekona logo" class="brand-logo">
+                <span class="brand-text">lekona</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="giftcard-container">
+        
+        <!-- Left Column Component: Purchase Card Platform -->
+        <section class="workspace-card">
+            <h1>Purchase Digital Gift Card</h1>
+            <p>Send an instant marketplace shopping allowance sequence straight to any recipient inbox worldwide.</p>
+            
+            <form onsubmit="executePurchaseSimulation(event)">
+                <div class="input-block-row">
+                    <label>Select Voucher Value (USD)</label>
+                    <div class="amount-selection-grid">
+                        <button type="button" class="btn-amount-node selected" onclick="updatePricedValue(25, this)">$25</button>
+                        <button type="button" class="btn-amount-node" onclick="updatePricedValue(50, this)">$50</button>
+                        <button type="button" class="btn-amount-node" onclick="updatePricedValue(100, this)">$100</button>
+                        <button type="button" class="btn-amount-node" onclick="updatePricedValue(250, this)">$250</button>
+                    </div>
+                </div>
+
+                <div class="input-block-row">
+                    <label for="recipientEmail">Recipient Email Address</label>
+                    <input type="email" id="recipientEmail" required placeholder="friend@domain.com">
+                </div>
+
+                <div class="input-block-row">
+                    <label for="buyerName">Your Name</label>
+                    <input type="text" id="buyerName" required placeholder="Sender Name">
+                </div>
+
+                <button type="submit" class="btn-primary-action">Proceed to Checkout</button>
+            </form>
+        </section>
+
+        <!-- Right Column Component: Balance Claim Portal Verification Matrix -->
+        <section class="workspace-card">
+            <h2>Redeem Code Balance</h2>
+            <p>Apply security-cleared validation strings directly to credit account registries.</p>
+            
+            <!-- Graphic Card Wrapper -->
+            <div class="voucher-display-preview">
+                <div class="preview-brand">Flekona</div>
+                <span>Active Voucher Value</span>
+                <div class="preview-val" id="cardValueDisplay">$25.00</div>
+            </div>
+
+            <form onsubmit="executeRedeemVerification(event)">
+                <div class="input-block-row">
+                    <label for="voucherStringCode">Enter Gift Card Code</label>
+                    <input type="text" id="voucherStringCode" autocomplete="off" required placeholder="XXXX-XXXX-XXXX-XXXX">
+                </div>
+                <button type="submit" class="btn-primary-action" style="background:#475569;">Apply to Balance</button>
+            </form>
+
+            <div class="alert-status-msg success" id="successClaimAlert">
+                Success! Secure code verified. $25.00 credit added to your account wallet pool.
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="catalog-footer">
+        <p>&copy; 2026 Flekona Platform Inc. Gift card balances do not expire and maintain cross-border currency parity.</p>
+    </footer>
+
+    <!-- Client-Side Value Toggler Logic Engine -->
+    <script>
+        let currentSelectionAmount = 25;
+
+        function updatePricedValue(amount, targetButton) {
+            currentSelectionAmount = amount;
+            
+            // Wipe active classes out of all array button parameters
+            document.querySelectorAll('.btn-amount-node').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            // Set the active styling node
+            targetButton.classList.add('selected');
+            
+            // Update the live preview card vector on the fly
+            document.getElementById('cardValueDisplay').textContent = `$${amount}.00`;
+        }
+
+        function executePurchaseSimulation(event) {
+            event.preventDefault();
+            alert(`Redirecting purchase of $${currentSelectionAmount} Gift Card to billing integration pipelines...`);
+        }
+
+        function executeRedeemVerification(event) {
+            event.preventDefault();
+            
+            // Display clean confirmation success alert panel feedback box
+            const alertBox = document.getElementById('successClaimAlert');
+            alertBox.textContent = `Success! Secure code verified. $${currentSelectionAmount}.00 credit added to your account wallet pool.`;
+            alertBox.style.display = 'block';
+            
+            // Flush text input stream field row parameter lines safely
+            document.getElementById('voucherStringCode').value = '';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Partnerships | Flekona Platform Ecosystem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Corporate Partnerships Theme */
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* High-Impact Enterprise Header */
+        .partner-hero {
+            background: linear-gradient(135deg, #090a0f 0%, #1e293b 50%, #0f172a 100%);
+            color: #ffffff;
+            padding: 90px 20px;
+            text-align: center;
+        }
+
+        .partner-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 18px;
+            line-height: 1.15;
+        }
+
+        .partner-hero p {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* Layout Content Split Grid */
+        .partner-grid {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        /* Left Column: Partnership Tracks */
+        .tracks-panel h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 28px;
+            letter-spacing: -0.5px;
+        }
+
+        .track-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 26px;
+            margin-bottom: 20px;
+            transition: border-color 0.2s;
+        }
+
+        .track-card:hover {
+            border-color: #cbd5e1;
+        }
+
+        .track-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .track-card h3 svg {
+            color: #0f172a;
+            width: 20px;
+            height: 20px;
+        }
+
+        .track-card p {
+            font-size: 14.5px;
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 0;
+        }
+
+        /* Right Column: Strategic Inbound Portal */
+        .proposal-portal {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 40px;
+        }
+
+        .portal-header h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .portal-header .subtitle {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #0f172a;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: #0f172a;
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 8px;
+        }
+
+        .btn-submit:hover {
+            background: #1e293b;
+        }
+
+        /* Responsive UI Framework Breakpoints */
+        @media (max-width: 968px) {
+            .partner-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 20px;
+            }
+            .proposal-portal {
+                position: static;
+            }
+            .partner-hero h1 {
+                font-size: 2.25rem;
+            }
+        }
+
+        .partner-footer {
+            background-color: #08090c;
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 13px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-logo">
+            <a href="index.html" class="logo-link">
+                <img src="logo.webp" alt="Flekona logo" class="brand-logo">
+                <span class="brand-text">lekona</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="partner-hero">
+            <h1>Co-Authoring the Future of Commerce.</h1>
+            <p>Connect your enterprise system capabilities with Flekona’s high-velocity global infrastructure to create modern, friction-free value pipelines.</p>
+        </section>
+
+        <div class="partner-grid">
+            
+            <section class="tracks-panel">
+                <h2>Alliance Opportunities</h2>
+                
+                <div class="track-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        Technology & API Integrations
+                    </h3>
+                    <p>Integrate specialized payment engines, automated multi-currency localized routing plugins, or real-time catalog analytics layers straight into Flekona's core user endpoints.</p>
+                </div>
+
+                <div class="track-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect><polygon points="16 8 23 4 23 20 16 16 16 8"></polygon></svg>
+                        Logistics & Supply Channels
+                    </h3>
+                    <p>Partner as a cross-border transport authority or micro-fulfillment processing hub to secure faster product clearing operations and maintain minimal pipeline delays.</p>
+                </div>
+
+                <div class="track-card">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        Enterprise & Wholesale Networks
+                    </h3>
+                    <p>Establish high-volume B2B supply agreements, exclusive brand protection mandates, or coordinated distribution alliances directly serving massive multi-regional target audiences.</p>
+                </div>
+            </section>
+
+            <section class="proposal-portal">
+                <div class="portal-header">
+                    <h2>Connect with Corporate Development</h2>
+                    <p class="subtitle">Provide your firm's fundamental operational indicators to request a formal briefing session.</p>
+                </div>
+
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="orgName">Organization / Legal Entity Name</label>
+                        <input type="text" id="orgName" required placeholder="e.g., Global Transit Systems Corp.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="partnershipTrack">Intended Strategic Track</label>
+                        <select id="partnershipTrack" required>
+                            <option value="" disabled selected>Select an alliance sector...</option>
+                            <option value="tech">Technology Solution or Platform API Integration</option>
+                            <option value="logistics">Logistics, Routing, or Supply Operations</option>
+                            <option value="enterprise">Enterprise B2B Wholesale Alliances</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="corporateEmail">Official Corporate Email</label>
+                        <input type="email" id="corporateEmail" required placeholder="alliances@organization.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="proposalSummary">Scope of Collaborative Venture</label>
+                        <textarea id="proposalSummary" rows="4" required placeholder="Briefly introduce your firm's core market strengths and summarize the proposed integration concept..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit Strategic Inquiry</button>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="partner-footer">
+        <p>&copy; 2026 Flekona Platform Inc. Corporate partnership tracking vectors, legal reviews, and strategic records are processed under strict institutional data privileges.</p>
+    </footer>
+
+</body>
+</html>

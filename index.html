@@ -92,10 +92,74 @@
         </button>
     </section>
 
-    <main class="container">
-        <h2 class="section-title">Trending Products</h2>
-        <div id="productsGrid" class="store-grid-layout"></div>
-    </main>
+
+<!--one-->
+<section class="featured-products-carousel" style="padding: 60px 40px; background: #ffffff;">
+    <div class="carousel-header" style="max-width: 1400px; margin: 0 auto 30px auto; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h2 style="font-size: 1.75rem; font-weight: 800; margin: 0 0 6px 0; color: #0f172a; letter-spacing: -0.5px;">Explore Featured Assets</h2>
+            <p style="color: #64748b; font-size: 14px; margin: 0;">Premium top-tier developer toolkits and designer vector frameworks.</p>
+        </div>
+        <!-- Navigation Control Interface Buttons -->
+        <div class="carousel-controls" style="display: flex; gap: 10px;">
+            <button id="btn-prev" class="carousel-nav-btn" onclick="moveSlider(-1)" aria-label="Previous Products">&larr;</button>
+            <button id="btn-next" class="carousel-nav-btn" onclick="moveSlider(1)" aria-label="Next Products">&rarr;</button>
+        </div>
+    </div>
+
+    <!-- Viewport Masking Frame Window Container -->
+    <div class="carousel-viewport">
+        <div id="product-slider-track" class="product-slider-track">
+            <!-- JavaScript populates data nodes here dynamically -->
+        </div>
+    </div>
+
+</section>
+<!--two-->
+<section class="featured-products-carousel" style="padding: 60px 40px; background: #ffffff;">
+    <div class="carousel-header" style="max-width: 1400px; margin: 0 auto 30px auto; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h2 style="font-size: 1.75rem; font-weight: 800; margin: 0 0 6px 0; color: #0f172a; letter-spacing: -0.5px;">Explore Featured Assets</h2>
+            <p style="color: #64748b; font-size: 14px; margin: 0;">Premium top-tier developer toolkits and designer vector frameworks.</p>
+        </div>
+        <!-- Navigation Control Interface Buttons -->
+        <div class="carousel-controls" style="display: flex; gap: 10px;">
+            <button id="btn-two-prev" class="carousel-nav-btn" onclick="twomoveSlider(-1)" aria-label="Previous Products">&larr;</button>
+            <button id="btn-two-next" class="carousel-nav-btn" onclick="twomoveSlider(1)" aria-label="Next Products">&rarr;</button>
+        </div>
+    </div>
+
+    <!-- Viewport Masking Frame Window Container -->
+    <div class="carousel-viewport">
+        <div id="two-slider-track" class="product-slider-track">
+            <!-- JavaScript populates data nodes here dynamically -->
+        </div>
+    </div>
+
+</section>
+<!--three-->
+<section class="featured-products-carousel" style="padding: 60px 40px; background: #ffffff;">
+    <div class="carousel-header" style="max-width: 1400px; margin: 0 auto 30px auto; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h2 style="font-size: 1.75rem; font-weight: 800; margin: 0 0 6px 0; color: #0f172a; letter-spacing: -0.5px;">Explore Featured Assets</h2>
+            <p style="color: #64748b; font-size: 14px; margin: 0;">Premium top-tier developer toolkits and designer vector frameworks.</p>
+        </div>
+        <!-- Navigation Control Interface Buttons -->
+        <div class="carousel-controls" style="display: flex; gap: 10px;">
+            <button id="btn-three-prev" class="carousel-nav-btn" onclick="threemoveSlider(-1)" aria-label="Previous Products">&larr;</button>
+            <button id="btn-three-next" class="carousel-nav-btn" onclick="threemoveSlider(1)" aria-label="Next Products">&rarr;</button>
+        </div>
+    </div>
+
+    <!-- Viewport Masking Frame Window Container -->
+    <div class="carousel-viewport">
+        <div id="three-slider-track" class="product-slider-track">
+            <!-- JavaScript populates data nodes here dynamically -->
+        </div>
+    </div>
+
+</section>
+
 
     <footer class="site-footer">
         <div class="footer-main-directory">
@@ -103,42 +167,41 @@
                 <div class="directory-col">
                     <h4>Get to know us</h4>
                     <ul>
-                        <li><a href="#">About Flekon</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Media</a></li>
+                        <li><a href="about.html" target="_blank" rel="noopener noreferrer">About Flekona</a></li>
+                        <li><a href="careers.html" target="_blank" rel="noopener noreferrer">Careers</a></li>
+                        <li><a href="blog.html" target="_blank" rel="noopener noreferrer">Blog</a></li>
+                        <li><a href="media.html" target="_blank" rel="noopener noreferrer">Media</a></li>
                     </ul>
                 </div>
                 <div class="directory-col">
                     <h4>Sell on Flekona</h4>
                     <ul>
-                        <li><a href="#">Start selling</a></li>
-                        <li><a href="#">Become a supplier</a></li>
-                        <li><a href="#">Self-publish with us</a></li>
-                        <li><a href="#">Advertise your products</a></li>
-                        <li><a href="#">Affiliate program</a></li>
-                        <li><a href="#">Partnerships</a></li>
+                        <li><a href="start-selling.html" target="_blank" rel="noopener noreferrer">Start selling</a></li>
+                        <li><a href="become-supplier.html" target="_blank" rel="noopener noreferrer">Become a supplier</a></li>
+                        <li><a href="self-publish.html" target="_blank" rel="noopener noreferrer">Self-publish with us</a></li>
+                        <li><a href="advertise.html" target="_blank" rel="noopener noreferrer">Advertise your products</a></li>
+                        <li><a href="affiliate.html" target="_blank" rel="noopener noreferrer">Affiliate program</a></li>
+                        <li><a href="partnerships.html" target="_blank" rel="noopener noreferrer">Partnerships</a></li>
                     </ul>
                 </div>
                 <div class="directory-col">
                     <h4>Get support</h4>
                     <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Refund</a></li>
-                        <li><a href="#">Live Chat</a></li>
-                        <li><a href="#">Order status</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Report</a></li>
+                        <li><a href="help-center.html" target="_blank" rel="noopener noreferrer">Help Center</a></li>
+                        <li><a href="refund-policy.html" target="_blank" rel="noopener noreferrer">Refund</a></li>
+                        <li><a href="live-chat.html" target="_blank" rel="noopener noreferrer">Live chat</a></li>
+                        <li><a href="order-status.html" target="_blank" rel="noopener noreferrer">Order status</a></li>
+                        <li><a href="report-violation.html" target="_blank" rel="noopener noreferrer">Report</a></li>
                     </ul>
                 </div>
                 <div class="directory-col">
                     <h4>Shop</h4>
                     <ul>
-                        <li><a href="#">All Products</a></li>
-                        <li><a href="#">Best Sellers</a></li>
-                        <li><a href="#">New Arrivals</a></li>
-                        <li><a href="#">Sale/Offers</a></li>
-                        <li><a href="#">Gift Cards</a></li>
+                        <li><a href="all-products.html">All products</a></li>
+                        <li><a href="best-sellers.html">Best Sellers</a></li>
+                        <li><a href="new-arrivals.html">New Arrivals</a></li>
+                        <li><a href="sale-offers.html">Sale/Offers</a></li>
+                        <li><a href="gift-cards.html">Gift Cards</a></li>
                     </ul>
                 </div>
             </div>
@@ -184,7 +247,6 @@
             </div>
         </div>
     </footer>
-
 
 <div class="custom-translate-wrapper">
     <div class="translate-box-header">
